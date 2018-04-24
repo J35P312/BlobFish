@@ -1,4 +1,7 @@
 #The differential expression analysis tools
+
+#source("https://bioconductor.org/biocLite.R")
+#biocLite("DESeq2")
 library("DESeq2", lib.loc="~/miniconda2/lib/R/library")
 
 #Other functions for reading the salmon input
@@ -13,7 +16,7 @@ dir <- system.file("extdata", package="tximportData")
 samples <- read.table(file.path(dir,"samples.txt"), header=TRUE)
 samples$condition <- factor(rep(c("A","B"),each=3))
 rownames(samples) <- samples$run
-samples[,c("pop","center","run","condition")]
+#samples[,c("pop","center","run","condition")]
 
 files <- file.path(dir,"salmon", samples$run, "quant.sf")
 names(files) <- samples$run
@@ -26,3 +29,5 @@ ddsTxi <- DESeqDataSetFromTximport(txi,
                                    design = ~ condition)
 dds <- DESeq(ddsTxi)
 res <- results(dds)
+
+write.table(res,file="")
