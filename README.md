@@ -8,16 +8,20 @@ http://bioconductor.org/packages/devel/bioc/vignettes/DESeq2/inst/doc/DESeq2.htm
 
 # Run
 
-	Rscript BlobFish.R --sample <samplesheet.txt> --tx <transcript2gene.txt> --folder <salmon_file_folder>  > Table.csv
+	Rscript BlobFish.R --sample <samplesheet.txt> --tx <transcript2gene.txt> > Table.csv
+
+or use the python script:
+
+	python BlobFish.py --allvsall --sample A A A B --tx <transcript2gene.txt> --path file1 file2 file3 file4 --dir <output>
 
 The samplesheet is a text file containing at least two columns, the "run" column and "condition" column:
 
-run condition
-run1 A
-run2 A
-run3 B
-run4 B
-run5 B
+run condition path
+run1 A file1_path
+run2 A file2_path
+run3 B file3_path
+run4 B file4_path
+run5 B file5_path
 
 Where the run column is the name of the run, and condition tells which group/condition each run belongs to.
 The transcript2gene file is a text file describing the gene name of each transcript:
