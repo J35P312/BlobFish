@@ -7,6 +7,7 @@ The wrapper is based on:
 http://bioconductor.org/packages/devel/bioc/vignettes/DESeq2/inst/doc/DESeq2.html
 
 # Run
+There are two ways of running BlobFish, either throgh the R script, or through the pythos script which is a wrapper around the R script.
 
 	Rscript BlobFish.R --sample <samplesheet.txt> --tx <transcript2gene.txt> > Table.csv
 
