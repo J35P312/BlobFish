@@ -1,3 +1,4 @@
+#!/usr/bin/env Rscript
 
 #The differential expression analysis tools
 suppressMessages(library("DESeq2"))
