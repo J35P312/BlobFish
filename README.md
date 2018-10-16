@@ -13,24 +13,26 @@ There are two ways of running BlobFish, either throgh the R script, or through t
 
 or use the python script:
 
-	python BlobFish.py --allvsall --sample A A A B --tx <transcript2gene.txt> --path file1 file2 file3 file4 --dir <output>
+	python BlobFish.py --allvsall --sample A A A B --tx <transcript2gene.txt> --path salmon_out_1 salmon_out_2 salmon_out_3 salmon_out_4 --dir <output>
+
+Here, salmon_out is the output path of salmon.
 
 The samplesheet is a text file containing at least two columns, the "run" column and "condition" column:
 
-run condition path
-run1 A file1_path
-run2 A file2_path
-run3 B file3_path
-run4 B file4_path
-run5 B file5_path
+	run condition path
+	run1 A salmon_out_path_1/quant.sf
+	run2 A salmon_out_path_2/quant.sf
+	run3 B salmon_out_path_3/quant.sf
+	run4 B salmon_out_path_4/quant.sf
+	run5 B salmon_out_path_5/quant.sf
 
 Where the run column is the name of the run, and condition tells which group/condition each run belongs to.
 The transcript2gene file is a text file describing the gene name of each transcript:
 
-TXNAME,GENEID
-TX1,geneA
-TX2,geneB
-TX3,geneB
+	TXNAME,GENEID
+	TX1,geneA
+	TX2,geneB
+	TX3,geneB
 
 # Dependencies
 
